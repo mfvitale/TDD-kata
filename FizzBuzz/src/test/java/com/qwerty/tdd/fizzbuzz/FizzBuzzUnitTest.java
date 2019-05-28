@@ -26,27 +26,18 @@
  ************************************************************************************/
 package com.qwerty.tdd.fizzbuzz;
 
-import org.junit.Test;
 
-import static junit.framework.TestCase.assertEquals;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FizzBuzzUnitTest {
 
-    @Test
-    public void convert_1_to_1() {
+    @ParameterizedTest
+    @CsvSource({ "1,1", "2,2", "4,4" })
+    public void convert_number_to_FizzBuzz_string(int number, String expectedOutput) {
 
-        assertEquals("1", new FizzBuzz().convert(1));
-    }
-
-    @Test
-    public void convert_2_to_2() {
-
-        assertEquals("2", new FizzBuzz().convert(2));
-    }
-
-    @Test
-    public void convert_4_to_4() {
-
-        assertEquals("4", new FizzBuzz().convert(4));
+        assertEquals(expectedOutput, new FizzBuzz().convert(number));
     }
 }
