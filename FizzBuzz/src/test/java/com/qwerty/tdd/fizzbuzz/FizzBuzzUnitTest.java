@@ -30,6 +30,7 @@ package com.qwerty.tdd.fizzbuzz;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -42,15 +43,10 @@ public class FizzBuzzUnitTest {
         assertEquals(expectedOutput, new FizzBuzz().convert(number));
     }
 
-    @Test
-    public void convert_3_to_Fizz() {
+    @ParameterizedTest
+    @ValueSource(ints = {3, 6, 9, 12, 15, 18, 21, 24, 27, 30})
+    public void convert_multiple_of_3_to_Fizz(int number) {
 
-        assertEquals("Fizz", new FizzBuzz().convert(3));
-    }
-
-    @Test
-    public void convert_6_to_Fizz() {
-
-        assertEquals("Fizz", new FizzBuzz().convert(6));
+        assertEquals("Fizz", new FizzBuzz().convert(number));
     }
 }
