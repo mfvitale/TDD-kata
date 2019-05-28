@@ -28,6 +28,9 @@ package com.qwerty.tdd.fizzbuzz;
 
 public class FizzBuzz {
 
+    public static final String FIZZ = "Fizz";
+    public static final String BUZZ = "Buzz";
+
     /**
      *
      * @param number
@@ -38,10 +41,14 @@ public class FizzBuzz {
      */
     public String convert(int number) {
 
-        if( number % 3 == 0 && number % 5 == 0) return "FizzBuzz";
-        if( number % 3 == 0) return "Fizz";
-        if( number % 5 == 0) return "Buzz";
+        if(divisibleBy(number, 15) ) return FIZZ+BUZZ;
+        if(divisibleBy(number, 3)) return FIZZ;
+        if(divisibleBy(number, 5)) return BUZZ;
 
         return String.valueOf(number);
+    }
+
+    private boolean divisibleBy(int number, int factor) {
+        return number % factor == 0;
     }
 }
