@@ -50,15 +50,10 @@ public class FizzBuzzUnitTest {
         assertEquals("Fizz", new FizzBuzz().convert(number));
     }
 
-    @Test
-    public void convert_5_to_Buzz() {
+    @ParameterizedTest
+    @ValueSource(ints = {5, 10, 20, 25, 35, 40, 50})
+    public void convert_multiple_of_5_to_Buzz(int number) {
 
-        assertEquals("Buzz", new FizzBuzz().convert(5));
-    }
-
-    @Test
-    public void convert_10_to_Buzz() {
-
-        assertEquals("Buzz", new FizzBuzz().convert(10));
+        assertEquals("Buzz", new FizzBuzz().convert(number));
     }
 }
