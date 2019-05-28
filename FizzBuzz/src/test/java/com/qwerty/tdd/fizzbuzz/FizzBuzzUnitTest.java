@@ -47,4 +47,10 @@ public class FizzBuzzUnitTest {
 
         assertEquals("Fizz", new FizzBuzz().convert(3));
     }
+
+    @Test
+    public void convert_6_to_Fizz() {
+
+        assertEquals("Fizz", new FizzBuzz().convert(6));
+    }
 }
