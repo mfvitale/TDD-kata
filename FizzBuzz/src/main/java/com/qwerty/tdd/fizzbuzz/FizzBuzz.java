@@ -30,6 +30,6 @@ public class FizzBuzz {
 
     public String convert(int number) {
 
-        throw new UnsupportedOperationException("unsupported operation");
+        return "1";
     }
 }
