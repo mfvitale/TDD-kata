@@ -43,4 +43,10 @@ public class FizzBuzzUnitTest {
 
         assertEquals("2", new FizzBuzz().convert(2));
     }
+
+    @Test
+    public void convert_4_to_4() {
+
+        assertEquals("4", new FizzBuzz().convert(4));
+    }
 }
