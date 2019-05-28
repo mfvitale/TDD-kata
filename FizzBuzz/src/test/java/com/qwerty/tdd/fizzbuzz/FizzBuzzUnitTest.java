@@ -26,6 +26,15 @@
  ************************************************************************************/
 package com.qwerty.tdd.fizzbuzz;
 
+import org.junit.Test;
+
+import static junit.framework.TestCase.assertEquals;
+
 public class FizzBuzzUnitTest {
 
+    @Test
+    public void convert_1_to_1() {
+
+        assertEquals("1", new FizzBuzz().convert(1));
+    }
 }
