@@ -49,4 +49,10 @@ public class FizzBuzzUnitTest {
 
         assertEquals("Fizz", new FizzBuzz().convert(number));
     }
+
+    @Test
+    public void convert_5_to_Buzz() {
+
+        assertEquals("Buzz", new FizzBuzz().convert(5));
+    }
 }
