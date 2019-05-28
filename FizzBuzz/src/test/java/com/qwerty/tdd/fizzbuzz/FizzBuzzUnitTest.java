@@ -44,7 +44,7 @@ public class FizzBuzzUnitTest {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {3, 6, 9, 12, 15, 18, 21, 24, 27, 30})
+    @ValueSource(ints = {3, 6, 9, 12, 18, 21, 24, 27})
     public void convert_multiple_of_3_to_Fizz(int number) {
 
         assertEquals("Fizz", new FizzBuzz().convert(number));
