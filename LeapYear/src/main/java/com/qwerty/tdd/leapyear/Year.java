@@ -11,8 +11,6 @@ public class Year {
 
     public boolean isLeapYear() {
 
-        if(year % 4 == 0) return true;
-
-        return false;
+        return year % 4 == 0;
     }
 }
