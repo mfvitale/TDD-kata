@@ -19,4 +19,10 @@ public class LeapYearUnitTest {
 
         assertTrue(new Year(1996).isLeapYear());
     }
+
+    @Test
+    public void check_1800_is_a_leap_year() {
+
+        assertFalse(new Year(1800).isLeapYear());
+    }
 }
