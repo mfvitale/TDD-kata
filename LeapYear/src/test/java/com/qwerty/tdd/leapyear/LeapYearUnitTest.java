@@ -11,12 +11,12 @@ public class LeapYearUnitTest {
     @Test
     public void check_1997_is_not_a_leap_year() {
 
-        assertFalse(new Year().isLeapYear());
+        assertFalse(new Year(1997).isLeapYear());
     }
 
     @Test
     public void check_1996_is_a_leap_year() {
 
-        assertTrue(new Year().isLeapYear());
+        assertTrue(new Year(1996).isLeapYear());
     }
 }
