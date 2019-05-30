@@ -1,28 +1,24 @@
 package com.qwerty.tdd.leapyear;
 
-import org.junit.jupiter.api.Test;
-
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LeapYearUnitTest {
 
-    @Test
-    public void check_1997_is_not_a_leap_year() {
+    @ParameterizedTest
+    @ValueSource(ints = {1997, 1800, 1700, 1800, 1900, 2100, 2200, 2300, 2500, 2600})
+    public void check_is_not_a_leap_year(int year) {
 
-        assertFalse(new Year(1997).isLeapYear());
+        assertFalse(new Year(year).isLeapYear());
     }
 
-    @Test
-    public void check_1996_is_a_leap_year() {
+    @ParameterizedTest
+    @ValueSource(ints = {1996, 1600, 2000, 2400})
+    public void check_is_a_leap_year(int year) {
 
-        assertTrue(new Year(1996).isLeapYear());
-    }
-
-    @Test
-    public void check_1800_is_a_leap_year() {
-
-        assertFalse(new Year(1800).isLeapYear());
+        assertTrue(new Year(year).isLeapYear());
     }
 }

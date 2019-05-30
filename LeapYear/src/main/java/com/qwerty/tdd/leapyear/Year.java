@@ -11,8 +11,15 @@ public class Year {
 
     public boolean isLeapYear() {
 
-        if( year % 4 == 0 && year % 100 != 0) return true;
+        if( isDivisibleBy(4) && !isDivisibleBy(100)) return true;
 
-        return year % 4 == 0 && year % 100 == 0 && year % 400 == 0;
+        return  isDivisibleBy(4) &&
+                isDivisibleBy(100) &&
+                isDivisibleBy(400);
+    }
+
+    private boolean isDivisibleBy(int factor) {
+
+        return this.year % factor == 0;
     }
 }
